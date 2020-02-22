@@ -107,6 +107,7 @@ cc_library(
         "include/os.h",
         "include/cx.h",
         "include/ux.h",
+        "include/os_io_seproxyhal.h",
     ],
     deps = [
         ":script.ld",

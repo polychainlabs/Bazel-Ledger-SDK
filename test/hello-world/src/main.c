@@ -1,4 +1,5 @@
 #include <ledger/os.h>
+#include <ledger/os_io_seproxyhal.h>
 #include <ledger/ux.h>
 
 uint8_t G_io_seproxyhal_spi_buffer[IO_SEPROXYHAL_BUFFER_SIZE_B];
