@@ -1,0 +1,93 @@
+diff --git a/lib_ux/include/ux.h b/lib_ux/include/ux.h
+index a6fb554..50eafbf 100644
+--- a/sdk/lib_ux/include/ux.h
++++ b/sdk/lib_ux/include/ux.h
+@@ -663,6 +663,3 @@ extern ux_turner_state_t ux_turner;
+ #endif //BOLOS_RELEASE
+ #endif // HAVE_UX_LEGACY  
+ 
+-
+-
+-#include "glyphs.h"
+diff --git a/lib_ux/src/ux_layout_bb.c b/lib_ux/src/ux_layout_bb.c
+index cdd2bca..3acda19 100644
+--- a/sdk/lib_ux/src/ux_layout_bb.c
++++ b/sdk/lib_ux/src/ux_layout_bb.c
+@@ -19,6 +19,9 @@
+ #include "ux.h"
+ #include "ux_layout_common.h"
+ 
++extern const bagl_icon_details_t C_icon_left;
++extern const bagl_icon_details_t C_icon_right;
++
+ #ifdef HAVE_UX_FLOW
+ 
+ /*********************************************************************************
+diff --git a/lib_ux/src/ux_layout_nnbnn.c b/lib_ux/src/ux_layout_nnbnn.c
+index e99c911..701fc9e 100644
+--- a/sdk/lib_ux/src/ux_layout_nnbnn.c
++++ b/sdk/lib_ux/src/ux_layout_nnbnn.c
+@@ -18,6 +18,9 @@
+ 
+ #include "ux.h"
+ 
++extern const bagl_icon_details_t C_icon_up;
++extern const bagl_icon_details_t C_icon_down;
++
+ #ifdef HAVE_UX_FLOW
+ 
+ /*********************************************************************************
+diff --git a/lib_ux/src/ux_layout_pb.c b/lib_ux/src/ux_layout_pb.c
+index 99ef8d7..a178cc8 100644
+--- a/sdk/lib_ux/src/ux_layout_pb.c
++++ b/sdk/lib_ux/src/ux_layout_pb.c
+@@ -18,6 +18,9 @@
+ 
+ #include "ux.h"
+ 
++extern const bagl_icon_details_t C_icon_left;
++extern const bagl_icon_details_t C_icon_right;
++
+ #ifdef HAVE_UX_FLOW
+ 
+ const bagl_element_t ux_layout_pb_elements[] = {
+diff --git a/lib_ux/src/ux_layout_pbb.c b/lib_ux/src/ux_layout_pbb.c
+index cb3f9b4..fe29c03 100644
+--- a/sdk/lib_ux/src/ux_layout_pbb.c
++++ b/sdk/lib_ux/src/ux_layout_pbb.c
+@@ -18,6 +18,9 @@
+ 
+ #include "ux.h"
+ 
++extern const bagl_icon_details_t C_icon_left;
++extern const bagl_icon_details_t C_icon_right;
++
+ #ifdef HAVE_UX_FLOW
+ 
+ /*********************************************************************************
+diff --git a/requirements.txt b/requirements.txt
+new file mode 100644
+index 0000000..3868fb1
+--- /dev/null
++++ b/requirements.txt
+@@ -0,0 +1 @@
++pillow
+diff --git a/icon3.py b/icon3.py
+index 65490af..65d0464 100644
+--- a/sdk/icon3.py
++++ b/sdk/icon3.py
+@@ -1,5 +1,3 @@
+-#!/usr/bin/env python3
+-
+ """
+
+ /*******************************************************************************
+diff --git a/sdk/include/ux.h b/sdk/include/ux.h
+new file mode 100644
+--- /dev/null
++++ b/sdk/include/ux.h
+@@ -0,0 +1,4 @@
++#pragma once
++
++// convenience header for ux.h inclusion alongside os and cx headers
++#include "../lib_ux/include/ux.h"

@@ -1,0 +1,22 @@
+workspace(
+    name = "ledger_app_example",
+)
+
+local_repository(
+    name = "sdk_bootstrap",
+    path = "../../",
+)
+
+load("@sdk_bootstrap//:rules.bzl", "ledger_sdk")
+
+ledger_sdk(
+    name = "ledgersdk",
+)
+
+load("@ledgersdk//:pip_setup.bzl", "pip_setup")
+
+pip_setup()
+
+load("@ledgersdk//:pip_install.bzl", "pip_install")
+
+pip_install()
