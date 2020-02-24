@@ -89,11 +89,7 @@ def _impl(ctx):
                     flag_group(
                         flags = [
                             "-isystem",
-                            "external/%{repo_name}/toolchains/llvm-toolchain-archive/include/c++/v1",
-                            "-isystem",
                             "external/%{repo_name}/toolchains/llvm-toolchain-archive/lib/clang/9.0.0/include",
-                            "-isystem",
-                            "external/%{repo_name}/toolchains/gcc-toolchain-archive/arm-none-eabi/include",
                         ],
                     ),
                 ],
@@ -211,6 +207,25 @@ def _impl(ctx):
         ],
     )
 
+    sysroot_feature = feature(
+        name = "sysroot",
+        enabled = True,
+        flag_sets = [
+            flag_set(
+                actions = [
+                    ACTION_NAMES.c_compile,
+                ],
+                flag_groups = [
+                    flag_group(
+                        flags = [
+                            "--sysroot=external/%{repo_name}/toolchains/gcc-toolchain-archive/arm-none-eabi",
+                        ],
+                    ),
+                ],
+            ),
+        ],
+    )
+
     return cc_common.create_cc_toolchain_config_info(
         ctx = ctx,
         toolchain_identifier = "ledger-toolchain",
@@ -226,6 +241,7 @@ def _impl(ctx):
             toolchain_include_directories_feature,
             default_link_flags_feature,
             default_compile_flags_feature,
+            sysroot_feature,
         ],
         action_configs = action_configs,
     )
