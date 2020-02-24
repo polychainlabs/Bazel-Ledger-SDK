@@ -124,7 +124,7 @@ cc_library(
         "lib_u2f/include",
     ],
     copts = [
-       "-std=gnu99",
+        "-std=gnu99",
         "-Wall",
         "-Werror",
         "-Wno-error=#warnings",

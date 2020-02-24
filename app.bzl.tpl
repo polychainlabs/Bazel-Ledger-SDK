@@ -1,4 +1,4 @@
-def ledger_app(name, srcs = [], deps = [], icons = []):
+def ledger_app(name, srcs = [], deps = [], icons = [], copts = []):
     native.genrule(
         name = "glyphsh",
         srcs = icons,
@@ -33,5 +33,5 @@ def ledger_app(name, srcs = [], deps = [], icons = []):
             "-std=c18",
             "-Wall",
             "-Werror",
-        ],
+        ] + copts,
     )
