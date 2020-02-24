@@ -25,8 +25,8 @@ workspace(
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 http_archive(
     name = "sdk_bootstrap",
-    strip_prefix = "bazel-ledger-sdk-v1.6.0-0",
-    urls = ["https://gitlab.com/polychainlabs/bazel-ledger-sdk/-/archive/v1.6.0-0/bazel-ledger-sdk-v1.6.0-0.tar.gz"]
+    strip_prefix = "bazel-ledger-sdk-v1.6.0-1",
+    urls = ["https://gitlab.com/polychainlabs/bazel-ledger-sdk/-/archive/v1.6.0-1/bazel-ledger-sdk-v1.6.0-1.tar.gz"]
 )
 
 # Initialize the ledger sdk rules
