@@ -30,7 +30,7 @@ def ledger_app(name, srcs = [], deps = [], icons = [], copts = []):
             ":glyphlib",
         ] + deps,
         copts = [
-            "-std=c18",
+            "-std=gnu18",
             "-Wall",
             "-Werror",
         ] + copts,

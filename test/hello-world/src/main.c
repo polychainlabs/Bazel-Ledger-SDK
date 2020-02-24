@@ -73,6 +73,11 @@ void app_main() {
   volatile unsigned int tx = 0;
   volatile unsigned int flags = 0;
 
+  // test to make sure we are building with correct flags so explicit_bzero is
+  // available
+  uint8_t msg[10];
+  explicit_bzero(msg, 10);
+
   // DESIGN NOTE: the bootloader ignores the way APDU are fetched. The only
   // goal is to retrieve APDU.
   // When APDU are to be fetched from multiple IOs, like NFC+USB+BLE, make
